@@ -1,6 +1,4 @@
-#
-# aliases/git.sh
-#
+#!/bin/bash
 
 alias ga='git add --all'
 alias gb='git branch'
