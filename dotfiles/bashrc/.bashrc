@@ -1,6 +1,4 @@
-#
-# ~/.bashrc
-#
+#!/bin/bash
 
 SCRIPT_PATH=`dirname $(readlink -f "${BASH_SOURCE[0]}")`
 
