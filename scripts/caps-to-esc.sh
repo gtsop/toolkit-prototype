@@ -1,6 +1,21 @@
 #!/bin/bash
 
-dumpkeys | head -1 > caps2esc.map
-echo "Keycode 58 = Escape" >> caps2esc.map
-sudo loadkeys caps2esc.map
-rm caps2esc.map
+SCRIPT_PATH=`dirname $(readlink -f "${BASH_SOURCE[0]}")`
+CURRENT=$(pwd)
+
+cd $SCRIPT_PATH
+
+MAP_FILE="$SCRIPT_PATH/caps2esc.map"
+
+dumpkeys | head -1 > $MAP_FILE
+echo "Keycode 58 = Escape" >> $MAP_FILE
+sudo loadkeys $MAP_FILE
+
+if [ "$1" == "--permanent" ]
+then
+	sudo sh -c "echo \"KEYMAP=$MAP_FILE\" > /etc/vconsole.conf"
+else
+	rm caps2esc.map
+fi
+
+cd $CURRENT

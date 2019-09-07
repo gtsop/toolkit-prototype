@@ -19,4 +19,7 @@ ln -sf $(pwd)/dotfiles/bashrc/.bashrc ~/.bashrc
 sudo ln -sf $(pwd)/scripts/caps-to-esc.sh /usr/local/bin/caps2esc
 sudo ln -sf $(pwd)/scripts/todo.sh /usr/local/bin/todo
 
+# Run some goodies
+caps2esc --permanent
+
 cd $CURRENT_PATH
