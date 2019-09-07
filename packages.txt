@@ -1,4 +1,5 @@
 bash-completion
 git
 links
+tree
 vim
