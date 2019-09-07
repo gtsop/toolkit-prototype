@@ -12,6 +12,7 @@ cd $SCRIPT_PATH
 sudo pacman -S --noconfirm - < packages.txt
 
 # Make dotfile links
+ln -sf $(pwd)/dotfiles/.bash_profile ~/.bash_profile
 ln -sf $(pwd)/dotfiles/bashrc/.bashrc ~/.bashrc
 
 # Install scripts to usr path
