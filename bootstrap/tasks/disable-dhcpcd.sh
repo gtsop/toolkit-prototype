@@ -1,6 +1,6 @@
 #!/bin/bash
 #
-# dhcpcd daemon interfears with wifi connectivity. For that reason it needs to
+# dhcpcd daemon interferes with wifi connectivity. For that reason it needs to
 # be disabled by default
 #
 # Resource: https://ostechnix.com/fix-job-netctl-service-failed-error-arch-linux/
