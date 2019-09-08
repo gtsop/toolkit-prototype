@@ -1,6 +1,5 @@
 #!/bin/bash
 
-sudo pacman -S --noconfirm - < $TOOLKIT/bootstrap/packages.txt
-
-# Capslock to Esc
-caps2esc --permanent
+source $TOOLKIT/bootstrap/tasks/capslock-to-escape.sh
+source $TOOLKIT/bootstrap/tasks/dhcpcd.sh
+source $TOOLKIT/bootstrap/tasks/install-packages.sh
