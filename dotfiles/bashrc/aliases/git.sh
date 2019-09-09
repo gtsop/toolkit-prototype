@@ -1,5 +1,6 @@
 #!/bin/bash
 
+alias g='git'
 alias ga='git add --all'
 alias gb='git branch'
 alias gc='git commit -m'
