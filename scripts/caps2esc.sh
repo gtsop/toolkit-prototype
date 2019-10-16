@@ -8,7 +8,7 @@ sudo loadkeys $MAP_FILE
 
 if [ "$1" == "--permanent" ]
 then
-	sudo sh -c "echo \"KEYMAP=$MAP_FILE\" > /etc/vconsole.conf"
+	sudo sh -c "echo \"KEYMAP=$MAP_FILE\" >> /etc/vconsole.conf"
 else
 	rm caps2esc.map
 fi

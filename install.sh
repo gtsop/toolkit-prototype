@@ -9,6 +9,7 @@ ln -sf $TOOLKIT/dotfiles/bashrc/.bashrc ~/.bashrc
 
 # Install scripts to usr path
 sudo ln -sf $TOOLKIT/scripts/caps2esc.sh /usr/local/bin/caps2esc
+sudo ln -sf $TOOLKIT/scripts/greekfont.sh /usr/local/bin/greekfont
 sudo ln -sf $TOOLKIT/scripts/todo.sh /usr/local/bin/todo
 
 # Bootstrap
