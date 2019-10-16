@@ -1,3 +1,3 @@
 #!/bin/bash
 
-alias t='tree -a -I ".git*"'
+alias t='tree --dirsfirst -a -I ".git*"'
