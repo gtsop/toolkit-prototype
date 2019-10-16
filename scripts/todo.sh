@@ -1,8 +1,15 @@
 #!/bin/bash
 
+TODO_FILE=~/.todo
+
+if [ ! -f $TODO_FILE ]
+then
+  touch $TODO_FILE
+fi
+
 if [ "$1" == "edit" ]
 then
-  vim ~/.todo
+  vim $TODO_FILE
 else
-  cat ~/.todo
+  cat $TODO_FILE
 fi
