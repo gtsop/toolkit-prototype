@@ -6,6 +6,7 @@ source $SCRIPT_PATH/aliases/git.sh
 source $SCRIPT_PATH/aliases/links.sh
 source $SCRIPT_PATH/aliases/ls.sh
 source $SCRIPT_PATH/aliases/ping.sh
+source $SCRIPT_PATH/aliases/timedatectl.sh
 source $SCRIPT_PATH/aliases/tree.sh
 
 source $SCRIPT_PATH/behaviours/bash-completion.sh
