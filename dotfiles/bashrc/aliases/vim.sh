@@ -1,4 +1,5 @@
 #!/bin/bash
 
 alias v='vim'
-alias vrc='vim ~/.vimrc'
+alias vrc='v ~/.vimrc'
+alias vtc='v ~/.tmux.conf'
