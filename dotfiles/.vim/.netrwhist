@@ -1,0 +1,12 @@
+let g:netrw_dirhistmax  =10
+let g:netrw_dirhistcnt =7
+let g:netrw_dirhist_7='/Users/george.tsopanoglou/projects/karmarama/clients/honda/honda-just-ride'
+let g:netrw_dirhist_6='/Users/george.tsopanoglou/.vim'
+let g:netrw_dirhist_5='/Users/george.tsopanoglou/projects/karmarama/clients/honda/survey-response-service/src/srs/email/utils'
+let g:netrw_dirhist_4='/Users/george.tsopanoglou'
+let g:netrw_dirhist_3='/Users/george.tsopanoglou/projects/karmarama/clients/honda/survey-response-service'
+let g:netrw_dirhist_2='/Users/george.tsopanoglou/projects/karmarama/clients/honda/survey-response-service/src/srs/email'
+let g:netrw_dirhist_1='/Users/george.tsopanoglou/projects/karmarama/clients/honda/survey-response-service/src/srs'
+let g:netrw_dirhist_0='/Users/george.tsopanoglou/projects/karmarama/clients/honda/survey-response-service'
+let g:netrw_dirhist_9='/Users/george.tsopanoglou/projects/karmarama/clients/honda/survey-response-service/src/instance'
+let g:netrw_dirhist_8='/Users/george.tsopanoglou/projects/karmarama/clients/honda/survey-response-service'
