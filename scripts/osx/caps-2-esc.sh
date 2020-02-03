@@ -5,9 +5,8 @@
 # https://developer.apple.com/library/archive/technotes/tn2450/_index.html
 # https://github.com/geerlingguy/mac-dev-playbook/issues/22
 
-function Map # FROM TO
-{
-  CMD="${CMD:+${CMD},}{${FROM}: ${1}, ${TO}: ${2}}"
+function Map {
+  echo "${CMD:+${CMD},}{${FROM}: ${1}, ${TO}: ${2}}"
 }
 
 function caps2esc {
@@ -25,7 +24,9 @@ function caps2esc {
   R_COMMAND="0x7000000E7"
   L_CONTROL="0x7000000E0"
 
-  Map ${CAPS_LOCK} ${ESCAPE}
+  CMD=$(Map ${CAPS_LOCK} ${ESCAPE})
 
-  hidutil property --set '{"UserKeyMapping":[{"HIDKeyboardModifierMappingSrc":0x700000039,"HIDKeyboardModifierMappingDst":0x700000029}]}'
+  hidutil property --set "{\"UserKeyMapping\":[${CMD}]}"
+
+  #hidutil property --set '{"UserKeyMapping":[{"HIDKeyboardModifierMappingSrc":0x700000039,"HIDKeyboardModifierMappingDst":0x700000029}]}'
 }
