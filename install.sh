@@ -6,6 +6,7 @@ getOSName os_name
 
 if [ "$os_name" == "osx" ]
 then
+  source scripts/osx/caps-2-esc.sh
   source scripts/osx/install-brew.sh
   source scripts/osx/install-coreutils.sh
   source scripts/osx/fix-readlink.sh

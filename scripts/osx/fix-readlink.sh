@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 # http://biercoff.com/readlink-f-unrecognized-option-problem-solution-on-mac/
 
 function greadlink_exists {
