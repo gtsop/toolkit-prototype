@@ -1,7 +1,7 @@
 #!/usr/bin/env bats
 
 source stub.sh/stub.sh
-source export-toolkit-os-name.sh
+source get-os-name.sh
 
 @test "getOSName works for linux" {
   stub_and_echo uname "Linux"
