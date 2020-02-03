@@ -4,7 +4,11 @@ source export-toolkit-os-name.sh
 
 @test "getOSName" {
 
-  # Exists
-  getOSName;
+  # Returns "linux"
+  os_name=$(getOSName)
+  [ "$os_name" == "linux" ]
 
+  # Returns "osx"
+  # os_name=$(getOSName)
+  # [ "$os_name" == "osx" ]
 }

@@ -1,7 +1,7 @@
 #!/bin/bash
 
 function getOSName {
-  return 0
+  echo "linux"
 }
 
 # Linux by default
