@@ -2,8 +2,10 @@
 
 source scripts/export-toolkit-os-name.sh
 
+echo $TOOLKIT__OS_NAME
 if [ "$TOOLKIT__OS_NAME" == "osx" ]
 then
+  echo "here"
   source scripts/osx/install-brew.sh
   source scripts/osx/install-coreutils.sh
   source scripts/osx/fix-readlink.sh
@@ -25,3 +27,4 @@ then
   # Bootstrap
   $TOOLKIT_ROOT_PATH/bootstrap/bootstrap.sh
 fi
+
