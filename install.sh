@@ -1,19 +1,17 @@
 #!/bin/bash
 
-source scripts/export-toolkit-os-name.sh
+source scripts/get-os-name.sh
 
-echo $TOOLKIT__OS_NAME
-if [ "$TOOLKIT__OS_NAME" == "osx" ]
+getOSName os_name
+
+if [ "$os_name" == "osx" ]
 then
-  echo "here"
   source scripts/osx/install-brew.sh
   source scripts/osx/install-coreutils.sh
   source scripts/osx/fix-readlink.sh
 fi
 
-source scripts/export-toolkit-root-path.sh
-
-if [ "$TOOLKIT__OS_NAME" == "linux" ]
+if [ "$os_name" == "linux" ]
 then
   # Make dotfile links
   ln -sf $TOOLKIT_ROOT_PATH/dotfiles/.bash_profile ~/.bash_profile
