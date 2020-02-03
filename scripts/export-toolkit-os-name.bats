@@ -1,14 +1,24 @@
 #!/usr/bin/env bats
 
+source stub.sh/stub.sh
 source export-toolkit-os-name.sh
 
-@test "getOSName" {
+@test "getOSName works for linux" {
+  stub_and_echo uname "Linux"
 
-  # Returns "linux"
-  os_name=$(getOSName)
-  [ "$os_name" == "linux" ]
+  getOSName result
 
-  # Returns "osx"
-  # os_name=$(getOSName)
-  # [ "$os_name" == "osx" ]
+  [ "$result" == "linux" ]
+}
+
+@test "getOSName works for osx" {
+  stub_and_echo uname "Darwin"
+
+  getOSName result
+
+  [ "$result" == "osx" ]
+}
+
+teardown() {
+  restore uname
 }
