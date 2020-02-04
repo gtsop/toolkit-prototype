@@ -11,7 +11,7 @@ fi
 
 if [ "$os_name" == "linux" ]
 then
-  source scripts/linux/*.bats
+  source scripts/linux/*.sh
 fi
 
 # exit
