@@ -23,3 +23,6 @@ iabbrev mochalint /* global describe, it, require */
 iabbrev mochadesc describe('', function () {<cr>})<Up><right><right><right><right><right><right><right><right>
 
 iabbrev mochait it('', function () {<cr>})<Up><right><right>
+
+" Cypress
+iabbrev cypresslint /* global cy, describe, it */

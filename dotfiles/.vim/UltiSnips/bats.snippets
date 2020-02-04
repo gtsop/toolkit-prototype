@@ -1,0 +1,9 @@
+snippet #! "#!/usr/bin/env bats"
+#!/usr/bin/env bats
+endsnippet
+
+snippet @test "@test 'case' { ... } "
+@test "${1:test case}" {
+  ${0}
+}
+endsnippet
