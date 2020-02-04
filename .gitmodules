@@ -1,0 +1,3 @@
+[submodule "lib/stub.sh"]
+	path = lib/stub.sh
+	url = https://github.com/jimeh/stub.sh
