@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-script_paths=(\
+script_paths=(
   $TOOLKIT__HOME/scripts/$TOOLKIT__OS_NAME
   $TOOLKIT__HOME/scripts
 )
