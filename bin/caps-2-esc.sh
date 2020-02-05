@@ -1,5 +1,6 @@
 #!/usr/bin/env bash
 
-load-toolkit-script.sh osx/caps-2-esc
+source $(which load-toolkit-script.sh) caps-2-esc
+# load-toolkit-script.sh caps-2-esc
 
 caps2esc

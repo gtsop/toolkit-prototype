@@ -1,29 +1,44 @@
-#!/bin/bash
+#!/usr/bin/env bash
 
-source scripts/get-os-name.sh
+# Environment variables
+PATH=$PATH":${pwd}/bin"
 
-getOSName os_name
+source load-toolkit-script.sh get-os-name
+getOSName TOOLKIT__OS_NAME
 
-if [ "$os_name" == "osx" ]
-then
-  source scripts/osx/*.sh
-fi
+export TOOLKIT__HOME=`pwd`
+export $TOOLKIT__OS_NAME
 
-if [ "$os_name" == "linux" ]
-then
-  source scripts/linux/*.sh
-fi
+echo "Make sure you export these in your .bashrc"
+echo ""
+echo "PATH=\"\$PATH:\$TOOLKIT__HOME/bin\""
+echo ""
+echo "export TOOLKIT__HOME=`pwd`"
+echo "export TOOLKIT__OS_NAME=$TOOLKIT__OS_NAME"
+echo ""
 
 # exit
 
-# # Make dotfile links
-# ln -sf $TOOLKIT_ROOT_PATH/dotfiles/.bash_profile ~/.bash_profile
-# ln -sf $TOOLKIT_ROOT_PATH/dotfiles/bashrc/.bashrc ~/.bashrc
+# if [ "$os_name" == "osx" ]
+# then
+#   source scripts/osx/*.sh
+# fi
 
-# # Install scripts to usr path
-# sudo ln -sf $TOOLKIT_ROOT_PATH/scripts/caps2esc.sh /usr/local/bin/caps2esc
-# sudo ln -sf $TOOLKIT_ROOT_PATH/scripts/greekfont.sh /usr/local/bin/greekfont
-# sudo ln -sf $TOOLKIT_ROOT_PATH/scripts/todo.sh /usr/local/bin/todo
+# if [ "$os_name" == "linux" ]
+# then
+#   source scripts/linux/*.sh
+# fi
 
-# # Bootstrap
-# $TOOLKIT_ROOT_PATH/bootstrap/bootstrap.sh
+# # exit
+
+# # # Make dotfile links
+# # ln -sf $TOOLKIT_ROOT_PATH/dotfiles/.bash_profile ~/.bash_profile
+# # ln -sf $TOOLKIT_ROOT_PATH/dotfiles/bashrc/.bashrc ~/.bashrc
+
+# # # Install scripts to usr path
+# # sudo ln -sf $TOOLKIT_ROOT_PATH/scripts/caps2esc.sh /usr/local/bin/caps2esc
+# # sudo ln -sf $TOOLKIT_ROOT_PATH/scripts/greekfont.sh /usr/local/bin/greekfont
+# # sudo ln -sf $TOOLKIT_ROOT_PATH/scripts/todo.sh /usr/local/bin/todo
+
+# # # Bootstrap
+# # $TOOLKIT_ROOT_PATH/bootstrap/bootstrap.sh
