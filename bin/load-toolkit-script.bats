@@ -6,7 +6,7 @@ setup() {
 
   mkdir -p $SCRIPTS/a-platform
 
-  echo "aFunction() { echo 1; }" > $SCRIPTS/a-script.sh
+  echo "aFunction() { echo 1; }; export default=\`eval \$aFunction\`" > $SCRIPTS/a-script.sh
   echo "aPlatformFunction() { echo 1; }" > $SCRIPTS/a-platform/a-script.sh
 }
 
@@ -16,16 +16,15 @@ is_function() {
 
 @test "loads a-script.sh from scripts/" {
 
-  source ./load-toolkit-script.sh a-script
+  cat $SCRIPTS/a-script.sh
+  source ./load-toolkit-script.sh a-script aFunctionLol
 
-  is_function aFunction
+  is_function aFunctionLol
 }
 
 @test "loads a-platform/a-script.sh from scripts/" {
 
-  TOOLKIT__OS_NAME=a-platform source ./load-toolkit-script.sh a-script
-
-  ! is_function aFunction
+  TOOLKIT__OS_NAME=a-platform source ./load-toolkit-script.sh a-script aPlatformFunction
 
   is_function aPlatformFunction
 }
@@ -42,7 +41,7 @@ is_function() {
   mkdir -p ~/.toolkit/tmp/scripts
   echo "aFunction() { echo 1; }" > ~/.toolkit/tmp/scripts/a-script.sh
 
-  TOOLKIT__HOME="~/.toolkit/tmp" source ./load-toolkit-script.sh a-script
+  TOOLKIT__HOME="~/.toolkit/tmp" source ./load-toolkit-script.sh a-script aFunction
 
   is_function aFunction
 
