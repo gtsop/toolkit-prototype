@@ -1,12 +1,10 @@
 #!/usr/bin/env bats
 
-
 setup() {
   TOOLKIT__HOME=$BATS_TMPDIR
   SCRIPTS=$BATS_TMPDIR/scripts
 
-  mkdir $SCRIPTS
-  mkdir $SCRIPTS/a-platform
+  mkdir -p $SCRIPTS/a-platform
 
   echo "aFunction() { echo 1; }" > $SCRIPTS/a-script.sh
   echo "aPlatformFunction() { echo 1; }" > $SCRIPTS/a-platform/a-script.sh
@@ -30,6 +28,25 @@ is_function() {
   ! is_function aFunction
 
   is_function aPlatformFunction
+}
+
+@test "throws error if script is not found" {
+  run source ./load-toolkit-script.sh script-404
+
+  [ "$status" -eq 1 ]
+  [ "$output" = "ERROR: Script not found script-404.sh" ]
+}
+
+@test "expands home variable" {
+
+  mkdir -p ~/.toolkit/tmp/scripts
+  echo "aFunction() { echo 1; }" > ~/.toolkit/tmp/scripts/a-script.sh
+
+  TOOLKIT__HOME="~/.toolkit/tmp" source ./load-toolkit-script.sh a-script
+
+  is_function aFunction
+
+  rm -rf ~/.toolkit/tmp
 }
 
 teardown() {
