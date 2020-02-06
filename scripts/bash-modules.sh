@@ -1,4 +1,25 @@
+#!/usr/bin/env bash
+
 function from {
+
+  if [ -z "$*" ]
+  then
+    echo "ERROR: no arguments"
+    return 1
+  fi
+
+  from_file=$1
+
+  if [ ! -f $from_file ]
+  then
+    echo "ERROR: expecting a file as the first argument"
+    return 2
+  fi
+
+
+}
+
+function _from {
   source ./$1.sh
 
   shift;
@@ -7,13 +28,14 @@ function from {
   declared_functions=`typeset -F | awk '{print $NF}' | tr '\n' ' '`;
   to_import_functions="";
 
-  function is_declared {
-    return `echo "$declared_functions" | grep -w "$1" > /dev/null && echo $?`;
-  };
+  function expect_more_functions {
+    return `[ "${1: -1}" == "," ]`
+  }
 
-function expect_more_functions {
-  return `[ "${1: -1}" == "," ]`
-}
+
+function is_declared {
+  return `echo "$declared_functions" | grep -w "$1" > /dev/null && echo $?`;
+};
 
 expect_more=true
 
