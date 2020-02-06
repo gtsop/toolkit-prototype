@@ -9,14 +9,27 @@ function from {
   fi
 
   from_file=$1
-
   if [ ! -f $from_file ]
   then
-    echo "ERROR: expecting a file as the first argument"
+    echo "ERROR: expected a file as the first argument"
     return 2
   fi
 
+  import_keyword=$2
+  if [ "$import_keyword" != "import" ]
+  then
+     echo "ERROR: expected to find 'import' keyword after 'a-script.sh'"
+     return 3
+  fi
 
+  star_keyword=$3
+  if [ "$star_keyword" != "*" ]
+  then
+    echo "ERROR: expected to find '*' keyword after 'import'"
+    return 4
+  fi
+
+  source $from_file
 }
 
 function _from {
