@@ -1,3 +1,9 @@
 [submodule "lib/stub.sh"]
 	path = lib/stub.sh
 	url = https://github.com/jimeh/stub.sh
+[submodule "dotfiles/.vim/bundle/nerdtree"]
+	path = dotfiles/.vim/bundle/nerdtree
+	url = https://github.com/preservim/nerdtree.git
+[submodule "dotfiles/.vim/bundle/ultisnips"]
+	path = dotfiles/.vim/bundle/ultisnips
+	url = https://github.com/SirVer/ultisnips.git
