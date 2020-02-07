@@ -8,10 +8,10 @@ function from {
     return 1
   fi
 
-  from_file=$1
-  if [ ! -f $from_file ]
+  the_file=$1
+  if [ ! -f $the_file ]
   then
-    echo "ERROR: expected a file as the first argument"
+    echo "ERROR: expecting to find file name after 'from' keyword"
     return 2
   fi
 
@@ -25,11 +25,17 @@ function from {
   star_keyword=$3
   if [ "$star_keyword" != "*" ]
   then
-    echo "ERROR: expected to find '*' keyword after 'import'"
-    return 4
+
+    if [ ! -z "$star_keyword" ]
+    then
+      source $the_file
+    else
+      echo "ERROR: expected to find '*' keyword after 'import'"
+      return 4
+    fi
   fi
 
-  source $from_file
+  source $the_file
 }
 
 function _from {
