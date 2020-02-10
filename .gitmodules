@@ -16,3 +16,6 @@
 [submodule "dotfiles/.vim/bundle/vim-bufkill"]
 	path = dotfiles/.vim/bundle/vim-bufkill
 	url = https://github.com/qpkorr/vim-bufkill.git
+[submodule "dotfiles/.vim/bundle/vim-commentary"]
+	path = dotfiles/.vim/bundle/vim-commentary
+	url = https://github.com/tpope/vim-commentary.git
