@@ -1,5 +1,8 @@
 #!/usr/bin/env bash
 
+# Resources
+# https://apple.stackexchange.com/a/127250
+
 function addGreekInput {
 
   KIND="Keyboard Layout"
