@@ -1,6 +1,6 @@
 [submodule "lib/stub.sh"]
 	path = lib/stub.sh
-	url = https://github.com/jimeh/stub.sh
+	url = https://github.com/gtsop/stub.sh
 [submodule "dotfiles/.vim/bundle/nerdtree"]
 	path = dotfiles/.vim/bundle/nerdtree
 	url = https://github.com/preservim/nerdtree.git
