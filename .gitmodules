@@ -19,3 +19,6 @@
 [submodule "dotfiles/.vim/bundle/vim-commentary"]
 	path = dotfiles/.vim/bundle/vim-commentary
 	url = https://github.com/tpope/vim-commentary.git
+[submodule "lib/piu"]
+	path = lib/piu
+	url = https://github.com/keithieopia/piu.git
