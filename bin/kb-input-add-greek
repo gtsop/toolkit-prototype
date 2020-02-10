@@ -1,0 +1,5 @@
+#!/usr/bin/env bash
+
+source load-toolkit-script.sh add-greek-input
+
+addGreekInput
