@@ -7,8 +7,7 @@ source caps-2-esc.sh
 
   stub_and_echo hidutil "test"
 
-  echo $default
-  echo "=="
+  caps2esc
 
   stub_called_with hidutil property --set "{\"UserKeyMapping\":[{\"HIDKeyboardModifierMappingSrc\": 0x700000039, \"HIDKeyboardModifierMappingDst\": 0x700000029}]}"
 
