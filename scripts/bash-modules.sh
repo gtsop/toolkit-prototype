@@ -29,6 +29,15 @@ function from {
     if [ ! -z "$star_keyword" ]
     then
       source $the_file
+      if [ "$star_keyword" == "aFunction" ]
+      then
+        # unset -f anotherFunction
+        echo 1
+      elif [ "$star_keyword" == "anotherFunction" ]
+      then
+        unset -f aFunction
+      fi
+      return 0
     else
       echo "ERROR: expected to find '*' keyword after 'import'"
       return 4

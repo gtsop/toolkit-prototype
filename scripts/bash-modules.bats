@@ -8,8 +8,8 @@ is_function() {
 
 setup() {
   touch "a-script.sh"
-  echo "aFunction () { echo 1; }" >> a-script.sh
-  echo "anotherFunction () { echo 1; }"  >> a-script.sh
+  echo "aFunction () { anotherFunction; }" >> a-script.sh
+  echo "anotherFunction () { echo 5; }"  >> a-script.sh
 }
 
 @test "exposes 'from' function" {
@@ -64,7 +64,27 @@ setup() {
 
   from a-script.sh import aFunction
 
-  !is_function anotherFunction
+  ! is_function anotherFunction
+}
+
+@test "and this?" {
+
+  from a-script.sh import aFunction
+
+  aFunction
+}
+
+@test "what about that?" {
+  from a-script.sh import aFunction
+
+  is_function aFunction
+
+  ! is_function anotherFunction
+
+  from a-script.sh import anotherFunction
+
+  is_function aFunction
+  is_function anotherFunction
 }
 
 teardown() {
