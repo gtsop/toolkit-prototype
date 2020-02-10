@@ -13,7 +13,6 @@ do
   then
     file_found=true
     source $path/$1.sh
-    eval "$2=$default"
     break
   fi
 done

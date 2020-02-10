@@ -1,20 +1,21 @@
 #!/usr/bin/env bash
 
 # Environment variables
-PATH=$PATH":${pwd}/bin"
+export TOOLKIT__HOME=`pwd`
+export PATH=$PATH:$TOOLKIT__HOME/bin
 
 source load-toolkit-script.sh get-os-name
 getOSName TOOLKIT__OS_NAME
 
-export TOOLKIT__HOME=`pwd`
 export $TOOLKIT__OS_NAME
 
+echo "=========================================="
 echo "Make sure you export these in your .bashrc"
-echo ""
-echo "PATH=\"\$PATH:\$TOOLKIT__HOME/bin\""
 echo ""
 echo "export TOOLKIT__HOME=`pwd`"
 echo "export TOOLKIT__OS_NAME=$TOOLKIT__OS_NAME"
+echo ""
+echo "PATH=\"\$PATH:\$TOOLKIT__HOME/bin\""
 echo ""
 
 # exit
