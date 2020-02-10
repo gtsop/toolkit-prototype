@@ -10,3 +10,6 @@
 [submodule "dotfiles/.vim/bundle/ale"]
 	path = dotfiles/.vim/bundle/ale
 	url = https://github.com/dense-analysis/ale.git
+[submodule "dotfiles/.vim/bundle/ctrlp.vim"]
+	path = dotfiles/.vim/bundle/ctrlp.vim
+	url = https://github.com/ctrlpvim/ctrlp.vim.git
