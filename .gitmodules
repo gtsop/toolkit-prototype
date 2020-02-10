@@ -13,3 +13,6 @@
 [submodule "dotfiles/.vim/bundle/ctrlp.vim"]
 	path = dotfiles/.vim/bundle/ctrlp.vim
 	url = https://github.com/ctrlpvim/ctrlp.vim.git
+[submodule "dotfiles/.vim/bundle/vim-bufkill"]
+	path = dotfiles/.vim/bundle/vim-bufkill
+	url = https://github.com/qpkorr/vim-bufkill.git
